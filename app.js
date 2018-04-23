@@ -38,8 +38,6 @@ mongoose.connection.on('error', (err) => {
 
 
 // Defining the port
-
-// const port = 5000;
 const port = process.env.PORT || 5000;
 
 
