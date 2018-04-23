@@ -57,6 +57,9 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Set Static Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Passport Strategy
 require('./config/passport')(passport);
 
@@ -71,6 +74,11 @@ app.get('/', (req, res) => {
 
 // User Routes
 app.use('/users', users);
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 
 // Routes goes above it //
 
