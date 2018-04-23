@@ -38,8 +38,9 @@ mongoose.connection.on('error', (err) => {
 
 
 // Defining the port
-const port = 5000;
 
+// const port = 5000;
+const port = process.ENV.PORT || 5000;
 
 
 // Defing the middlewares //
